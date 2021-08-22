@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin: 0;
+    background: black;
+    height: 100%;
+}
+
+.conteiner {
+    background: wheat;
+    width: 250px;
+    height: 400%;
+    position: relative;
+    top: 35px;
+    left: 50vh;
+    /*display: flex;
+    flex-direction: row;*/
+}
+
+.time-add {
+    background: red;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.time-add:hover {
+    background: white;
+    color: black;
+}
+
+p {
+    margin: 5px 0 0 0;
+}
+
+.definite-time {
+    display: flex;
+    justify-content: space-around;
+    height: 25px;
+}
+
+.time-conteiner {
+    background: rgb(255, 0, 0);
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border:1px solid black;
+    margin: 0px 0 0 30%;
+    position: relative;
+    top: 10px;
+}
+
+#minutes,#seconds {
+    display: flex;
+    margin-left: 30%;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+#minutes:hover {
+    color:black;
+} 
+
+#seconds:hover {
+    color:rgb(7, 7, 7);
+}
+
+#minutes {
+    margin-top: 10px;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid;
+}
+
+svg {
+    height: 10px;
+}
+
+.botton-conteiner {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px;
+}
+
+button:hover {
+    background: rgb(133, 133, 133);
+}
