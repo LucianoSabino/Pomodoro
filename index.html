@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+</head>
+<body>
+    <span id="minutes">00</span>:<span id="seconds">00</span>
+    <br><br>
+    <button onclick="startCounter()">Start</button>
+    <button onclick="pauseCounter()">Pause</button>
+    <button onclick="resetCounter()">Reset</button>
+    <script>
+        let minutes = 25;
+        let seconds = 00;
+        let counterInterval = undefined
+
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        updatCounterEl();
+
+        function updatCounterEl() {
+            //< 10 ? `0${minutes}` : minutes; isso fazer com que receba os dois 00 para não fica um só
+            minutesEl.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+            secondsEl.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+        }
+
+        function startCounter() {
+            counterInterval = setInterval( () => {
+                if(seconds === 0) {
+                    if(minutes === 0) {
+                        clearInterval(counterInterval)
+                    } else {
+                        //aqui ele vai entra um vez 
+                        seconds = 59; 
+                        --minutes;
+                    }
+                } else {
+                    //ai depos vem para car
+                    --seconds;
+                }
+
+                updatCounterEl();
+
+            }, 1000);
+        }
+
+        function pauseCounter() {
+            clearInterval(counterInterval)
+        }
+
+        function resetCounter() {
+            clearInterval(counterInterval);
+            minutes = 25;
+            seconds = 00;
+
+            updatCounterEl();
+        }
+    </script>
+</body>
+</html>
